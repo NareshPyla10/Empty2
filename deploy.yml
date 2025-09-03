@@ -1,0 +1,20 @@
+name: Deploy the Project
+
+on:
+  workflow-run:
+    workflows: ['Build the Project']
+    types:
+      - completed
+
+
+jobs:
+  deploy_the_project:
+    name: Deploy the Project
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Git Repository
+        uses: actions/checkout@v4
+
+     - name: Deploy the Project
+       run: echo "🚀 Deploy workflow triggered after build"
