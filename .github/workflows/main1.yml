@@ -2,13 +2,12 @@ name: Deploy the Project
 
 on:
   workflow_run:
-    workflows: ["Build the Project"]
+    workflows: ["Build the project"]
     types:
       - completed
 
 jobs:
   deploy_the_project:
-    name: Deploy the Project
     runs-on: ubuntu-latest
 
     steps:
